@@ -1,2 +1,2 @@
-Cheat Sheet
+cheats and what have you
 
