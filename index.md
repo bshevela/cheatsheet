@@ -17,8 +17,6 @@ in general: command (command line options)arguments and whatever
 date = date and time -u = utc time
 date "+Today's date: %d. The time is %t"
 
-CheatCheet.lnx
-
 Creating a script
 
 script -a --timing=week-2.tm week-2.out
