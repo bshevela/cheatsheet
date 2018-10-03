@@ -87,7 +87,7 @@ echo "My name is ${NAME}s"
 '' - prints out every character as is  
 ls "a*" 'a*' a\* - returns the a* file  
 
-bash shell -desert.sh - running a script  
+bash shell-desert.sh - running a script  
 vim shell-desert.sh  
 mkdir -p Dessert/Cobbler - creates files  
 
@@ -103,4 +103,66 @@ echo "The cobbler filling is:"
 cat Dessert/Cobbletr/Filling  
 bash -e shell-dessert.sh - exits before error   
 bash -x shell-dessert.sh - debugs  
+
+ctrl-l - clears
+alt-d  - deletes a word
+ctrl-k - copy
+ctrl-r - finds in history
+ctrl-p - goes through history
+!!     - runs last command
+Control Signals
+bach shell-dessert.sh
+ctrl-c - signal interrupt, terminates program
+bash -x whatevs shows commands in script
+ctrl-d - send endoffile to program, will also exit shell
+ctrl-z - sends suspend to program, shows which program was suspended
+     works with vim as well
+jobs - shows all background jobs
+fg commandname - brings back to commandname
+
+Exit Status
+0 - command exitted correctly
+[1-255]  - command encountered error
+echo $? - lists exit status of last run command
+   some man files contain exit status
+127 - not-found error code
+126 - permission error code
+130 - ctrl-c terminated prog
+1   - general error
+
+Cmd Line Args
+bash args.sh returns error no args
+bash args.sh some args - correctly executes
+
+vim args.sh
+echo "I received $# args" -$# num of args from cmd line
+echo "Args list: $@" -$@ entire list of args
+echo "First: $1"
+echo "second: $2"
+echo 
+echo "Arg 0 is $0 (this is not counted in " '$# and $0)'
+
+echo 'Hello world' > $1
+echo 'Apples' > $2.txt
+ls -l some  - shows location of file
+
+while-do-done loop
+
+vim tlw.sh
+PROMPT="Enter three little words:"
+echo -n "$[PROMPT]"
+
+while read A B C ; do 
+        echo Fisrt $[A]
+        echo Second $[B]
+        echo Third $[C]
+        LAST="$[C]"
+        echo
+        echo -n "$[PROMPT]"
+ done
+ echo "Your last word was $[LAST]"
+ 
+ exitting with ctrl-d shows last line ctrl-c doesn't
+ 
+
 
