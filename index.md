@@ -1,3 +1,5 @@
+Vim and class things
+
 remoting from school:
 
 remote in through putty - port 22 - connection type ssh
@@ -164,5 +166,29 @@ while read A B C ; do
  
  exitting with ctrl-d shows last line ctrl-c doesn't
  
+ls -l || wc -l -counts number of objects in current directory
+grep - searches file/oject for keyword/pattern and outputs them to cmd line
+grep --color 'editor' file - keyword highlighted in output
+grep -c 'editor' file - prints number of lines with keyword
+grep -v - searches for lines that don't contain the keyword
+grep -i 'cobbler' file1 file 2 - case insensitive search of multiple files
+cat file | grep 'editor' 
+ps - lists all current processes
+ps | grep 'vim' - searches for and returns vim processes
+head -c numLines file - returns first few lines at the top of file
+tail -c numLines file - opposite of head
+sort file - sorts file and outputs
+sort -r - does a random shuffle of file
+sort file | tee file - puts sorted file back in file and outputs
+ls | tee file - returns output and creates file with ls inside
+sort file | uniq -filters out duplicates
+sort file | uniq -c - counts number of instances for each word
+cat file | tr "[a-z]" "[A-Z]" - turns capitalized version of file
+cat file | tr "[:lower:]" "[:upper:]" - turns capitalized version of file
+echo "String 1647" | tr -d "[:digits:]" - returns String 
+echo "String 1647" | tr -cd "[:digits:]" - returns 1647
+cut -c 1,2,3 file - returns first three characters of each line in file
+cut -b1-3,5-8 file - returns first three bytes and 5-8
+cut -d ',' -f 1,3 file - returns first and third field of file cutting at the commas
 
 
