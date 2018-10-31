@@ -191,4 +191,25 @@ cut -c 1,2,3 file - returns first three characters of each line in file
 cut -b1-3,5-8 file - returns first three bytes and 5-8
 cut -d ',' -f 1,3 file - returns first and third field of file cutting at the commas
 
-
+wget https://kellyn-larson.github.io/pipeline_data.csv - downloads that file
+Questions:
+1. How many crimes happened on the 12th?
+cut -c3-4 pipeline_data.csv | grep 12 | wc -l
+2. How many lines in the file don't start with '1'? Which line(s)?
+grep -vc "^1" pipeline_data.csv- refers to beggining of lines that don't begin with one
+3. Show all addresses and only addresses
+cut -d ',' -f 2 pipeline
+4. Show me all house numbers and only house numbers (not the first word of street names)
+cut -d ',' -f 2 pipeline | cut -d ' ' -f 1 | grep -v [A-Z]
+5. How many code 2299 occurred?
+cut -d ',' -f 7 pipeline | grep 2299 | wc -l
+6. Write the descriptions (and nothing else) for all code 2299 to a file
+cut -d ',' -f 6,7 pipeline | grep 2299 | cut -d ','-f 1 > output.txt
+7. Give Lat+Long of every crime with 'THEFT' in the description
+grep 'THEFT' pipeline | cut -d ',' 8,9
+8. How many crimes occurred on each day?
+cut -d ' ' -f 1 pipeline | uniq -c 
+9. Which day had most? least? median?
+cut -d ' ' -f 1 pipeline | uniq -c  | sort -n 
+10. Which crime code occurred most? How many times?
+cut -d ',' -f 7 pipeline | sort -n | uniq -c | sort -n | tail -1
